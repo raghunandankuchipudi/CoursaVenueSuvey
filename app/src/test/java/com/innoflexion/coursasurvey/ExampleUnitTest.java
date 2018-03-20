@@ -1,4 +1,4 @@
-package com.sample.webcontrolapp;
+package com.innoflexion.coursasurvey;
 
 import org.junit.Test;
 

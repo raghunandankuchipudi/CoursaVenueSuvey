@@ -1,4 +1,4 @@
-package com.sample.webcontrolapp;
+package com.innoflexion.coursasurvey;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

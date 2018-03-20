@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sample.webcontrolapp.MainActivity">
+    tools:context="com.innoflexion.coursasurvey.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
 
         <fragment
             android:id="@+id/mapFragment"
-            android:name="com.sample.webcontrolapp.WebControlFragment"
+            android:name="com.innoflexion.coursasurvey.WebControlFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize" />
@@ -29,7 +29,7 @@
 
                 <fragment
                     android:id="@+id/buttonFragment"
-                    android:name="com.sample.webcontrolapp.SurveyStatusFragment"
+                    android:name="com.innoflexion.coursasurvey.SurveyStatusFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>

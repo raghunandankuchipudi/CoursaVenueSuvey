@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sample.webcontrolapp.WebControlFragment">
+    tools:context="com.innoflexion.coursasurvey.WebControlFragment">
 
     <WebView
         android:id="@+id/web"

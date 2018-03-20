@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CoursaVenueSuvey.iml" filepath="$PROJECT_DIR$/CoursaVenueSuvey.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoursaVenueSurvey.iml" filepath="$PROJECT_DIR$/CoursaVenueSurvey.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crlsdk-4.0.20180221.c9ba-pro-release/crlsdk-4.0.20180221.c9ba-pro-release.iml" filepath="$PROJECT_DIR$/crlsdk-4.0.20180221.c9ba-pro-release/crlsdk-4.0.20180221.c9ba-pro-release.iml" />
     </modules>
   </component>
 </project>

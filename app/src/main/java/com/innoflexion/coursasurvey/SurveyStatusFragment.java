@@ -1,7 +1,6 @@
-package com.sample.webcontrolapp;
+package com.innoflexion.coursasurvey;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
@@ -10,9 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class SurveyStatusFragment extends Fragment {
 

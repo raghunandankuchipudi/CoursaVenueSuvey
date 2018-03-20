@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/crlsdk-4.0.20180221.c9ba-pro-release" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,4 +1,4 @@
-package com.sample.webcontrolapp;
+package com.innoflexion.coursasurvey;
 
 import android.content.Intent;
 import android.os.Bundle;
