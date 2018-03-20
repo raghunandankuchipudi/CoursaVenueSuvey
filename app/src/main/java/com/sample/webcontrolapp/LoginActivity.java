@@ -12,7 +12,6 @@ import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     Button btn_login;
 
     @Override

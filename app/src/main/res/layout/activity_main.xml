@@ -11,7 +11,7 @@
 
         <fragment
             android:id="@+id/mapFragment"
-            android:name="com.sample.webcontrolapp.MapFragment"
+            android:name="com.sample.webcontrolapp.WebControlFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize" />
@@ -29,7 +29,7 @@
 
                 <fragment
                     android:id="@+id/buttonFragment"
-                    android:name="com.sample.webcontrolapp.ButtonsFragment"
+                    android:name="com.sample.webcontrolapp.SurveyStatusFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>

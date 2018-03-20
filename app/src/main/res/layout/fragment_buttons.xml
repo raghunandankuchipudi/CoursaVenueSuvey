@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.sample.webcontrolapp.ButtonsFragment">
+    tools:context="com.sample.webcontrolapp.SurveyStatusFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <Button

@@ -1,9 +1,9 @@
 package com.sample.webcontrolapp;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,13 +14,12 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MapFragment extends Fragment implements View.OnTouchListener, Handler.Callback {
+public class WebControlFragment extends Fragment implements View.OnTouchListener, Handler.Callback {
 
-    private static final int CLICK_ON_WEBVIEW = 1;
+    private static final int CLICK_ON_WEB_VIEW = 1;
     private static final int CLICK_ON_URL = 2;
     private static final String TAG = "WebControl";
 
@@ -29,8 +28,10 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
     private View view;
     private WebView webView;
     private WebViewClient client;
+    private ProgressDialog pd;
+    private Context mContext;
 
-    public MapFragment() {
+    public WebControlFragment() {
         // Required empty public constructor
     }
 
@@ -45,6 +46,10 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_map, container, false);
+        mContext = getActivity();
+        pd = new ProgressDialog(mContext);
+        pd.setMessage(getString(R.string.progress_bar_message));
+        pd.show();
 
         webView = (WebView) view.findViewById(R.id.web);
 
@@ -53,6 +58,9 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
         client = new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (!pd.isShowing()) {
+                    pd.show();
+                }
                 handler.sendEmptyMessage(CLICK_ON_URL);
                 Log.v(TAG, "shouldOverrideUrlLoading -> " + url);
                 return false;
@@ -68,10 +76,13 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
+                if (pd.isShowing()) {
+                    pd.dismiss();
+                }
                 Log.v(TAG, "onPageFinished -> " + url);
 
                 /*We can able to input the values to web page*/
-                final String name = "Raghu", email = "kuchipudiraghu@gmail.com", message = "Testing web page", verification = null;
+               /* final String name = "Raghu", email = "kuchipudiraghu@gmail.com", message = "Testing web page", verification = null;
                 final String js = "javascript:(function(){" +
                         "document.getElementById('nf-field-12').value = '" + name + "';" +
                         "document.getElementById('nf-field-13').value = '" + email + "';" +
@@ -95,7 +106,7 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
                     });
                 } else {
                     view.loadUrl(js);
-                }
+                }*/
             }
 
             @Override
@@ -126,7 +137,7 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setDatabaseEnabled(true);
-        webView.loadUrl("http://www.google.com");
+        webView.loadUrl(getString(R.string.url_web_view));
 
         return view;
     }
@@ -144,7 +155,7 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (v.getId() == R.id.web && event.getAction() == MotionEvent.ACTION_DOWN) {
-            handler.sendEmptyMessageDelayed(CLICK_ON_WEBVIEW, 500);
+            handler.sendEmptyMessageDelayed(CLICK_ON_WEB_VIEW, 500);
         }
         return false;
     }
@@ -152,10 +163,10 @@ public class MapFragment extends Fragment implements View.OnTouchListener, Handl
     @Override
     public boolean handleMessage(Message msg) {
         if (msg.what == CLICK_ON_URL) {
-            handler.removeMessages(CLICK_ON_WEBVIEW);
+            handler.removeMessages(CLICK_ON_WEB_VIEW);
             return true;
         }
-        if (msg.what == CLICK_ON_WEBVIEW) {
+        if (msg.what == CLICK_ON_WEB_VIEW) {
             //Toast.makeText(this, "WebView clicked", Toast.LENGTH_SHORT).show();
             return true;
         }
