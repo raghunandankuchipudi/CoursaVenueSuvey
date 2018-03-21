@@ -36,7 +36,7 @@ public class SurveyStatusFragment extends Fragment {
     Button toggleSurvey;
     Context context;
 
-    private String TAG = "Retail SDK Demo";
+    private String TAG = "coursa venue survey";
     private static final int PERM_REQUEST = 1010;
     CrlManager mCrlMgr;
 
