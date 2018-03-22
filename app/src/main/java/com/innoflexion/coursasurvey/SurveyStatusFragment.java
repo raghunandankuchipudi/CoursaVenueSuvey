@@ -34,7 +34,7 @@ import java.util.UUID;
 public class SurveyStatusFragment extends Fragment {
 
     private View view;
-    Button toggleSurvey;
+    private Button toggleSurvey;
     Context context;
 
     private String TAG = "coursa venue survey";
@@ -47,8 +47,8 @@ public class SurveyStatusFragment extends Fragment {
     String mSdkKey = "acbf2508-47bd-4598-8b2d-aea026317ef3";
     String mUniqueUserId = "ypuzyrenko@innoflexion.com";
     String mUniqueDeviceId = UUID.randomUUID().toString();
-    boolean mEnableDebug = true;
-    boolean mAppActive = false;
+    private boolean mEnableDebug = true;
+    private boolean mAppActive = false;
 
     /* Ensure a valid read/write path exists. */
     String mRetailDir = Environment.getExternalStorageDirectory().getPath() + "/coursasurvey/";
@@ -125,9 +125,7 @@ public class SurveyStatusFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_buttons, container, false);
         context = this.getContext();
-        toggleSurvey = (Button) view.findViewById(R.id.toogleSurvey);
-
-//        mTaskHandler = new Handler();
+        toggleSurvey = view.findViewById(R.id.toogleSurvey);
 
         mCrlMgr = CrlManager.getInstance();
 
@@ -158,6 +156,24 @@ public class SurveyStatusFragment extends Fragment {
                 }
             }
         });
+
+
+        Button drawRoute = view.findViewById(R.id.drawRoute);
+        drawRoute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Button showHistory = view.findViewById(R.id.showHistory);
+        showHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         return view;
     }
 

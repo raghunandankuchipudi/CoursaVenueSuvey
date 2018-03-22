@@ -1,14 +1,53 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.innoflexion.coursasurvey.SurveyStatusFragment">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/toogleSurvey"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/session_info_str"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Survey" />
+        android:layout_alignParentTop="true"
+        android:text="@string/session_info_str"
+        android:textSize="20sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/session_status_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/session_status_str"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/session_info_str"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/drawRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/draw_route" />
+
+        <Button
+            android:id="@+id/showHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/show_history" />
+
+        <Button
+            android:id="@+id/toogleSurvey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/start_survey" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -5,37 +5,24 @@
     android:layout_height="match_parent"
     tools:context="com.innoflexion.coursasurvey.MainActivity">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <fragment
             android:id="@+id/mapFragment"
             android:name="com.innoflexion.coursasurvey.WebControlFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="?attr/actionBarSize" />
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8" />
 
-        <LinearLayout
+        <fragment
+            android:id="@+id/buttonFragment"
+            android:name="com.innoflexion.coursasurvey.SurveyStatusFragment"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="bottom"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <fragment
-                    android:id="@+id/buttonFragment"
-                    android:name="com.innoflexion.coursasurvey.SurveyStatusFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </FrameLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

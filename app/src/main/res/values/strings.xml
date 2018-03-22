@@ -1,16 +1,27 @@
 <resources>
     <string name="app_name">Coursa Venue Survey</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!--Survey Status-->
+    <string name="session_info_str">Session Info</string>
+    <string name="session_status_str">Session Status: </string>
+
     <string name="stop_survey">Stop Survey</string>
     <string name="start_survey">Start Survey</string>
-    <string name="url_web_view">"http://www.google.com"</string>
     <string name="survey">Survey</string>
+    <string name="draw_route">Draw Route</string>
+    <string name="show_history">Show History</string>
 
-    <string name="dialog_msg">Choose Your Action!</string>
+
+    <string name="dialog_msg">Select an Option</string>
     <string name="accept_survey">Accept Survey</string>
     <string name="decline_survey">Decline Survey</string>
     <string name="progress_bar_message">Loading...</string>
+
+    <!--Login Screen-->
     <string name="no_email">Please enter valid email</string>
     <string name="no_password">Password cannot be empty</string>
+
+    <!--Default WebControl URL-->
+    <string name="url_web_view">"http://www.google.com"</string>
+
 </resources>
