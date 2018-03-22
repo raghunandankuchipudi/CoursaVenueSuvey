@@ -29,6 +29,7 @@ import com.invensense.coursa.crlsdk.CrlSessionStatus;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 public class SurveyStatusFragment extends Fragment {
 
@@ -45,7 +46,7 @@ public class SurveyStatusFragment extends Fragment {
 
     String mSdkKey = "acbf2508-47bd-4598-8b2d-aea026317ef3";
     String mUniqueUserId = "ypuzyrenko@innoflexion.com";
-    String mUniqueDeviceId = "Unique Device ID";
+    String mUniqueDeviceId = UUID.randomUUID().toString();
     boolean mEnableDebug = true;
     boolean mAppActive = false;
 
@@ -210,12 +211,7 @@ public class SurveyStatusFragment extends Fragment {
 //    }
 
     private void showDefaultDialog() {
-        AlertDialog.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
-        } else {
-            builder = new AlertDialog.Builder(context);
-        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
         builder.setTitle(getString(R.string.survey))
                 .setMessage(getString(R.string.dialog_msg))
                 .setPositiveButton(getString(R.string.accept_survey), new DialogInterface.OnClickListener() {
