@@ -30,15 +30,25 @@ public class LoginActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userName.getText().toString().trim().length() == 0) {
-                    userName.setError("Username is not entered");
+                String email = userName.getText().toString().trim();
+
+                //Validate email & its format
+                if(email.length() == 0 || !email.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+")) {
+                    userName.setError(getString(R.string.no_email));
                     userName.requestFocus();
-                }
-                if(password.getText().toString().trim().length() == 0){
-                    password.setError("Password is not entered");
-                    password.requestFocus();
+
+                    return;
                 }
 
+                //Password shouldn't be empty.
+                if(password.getText().toString().trim().length() == 0){
+                    password.setError(getString(R.string.no_password));
+                    password.requestFocus();
+
+                    return;
+                }
+
+                //Once validation is good, call the API to authenticate the user.
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
