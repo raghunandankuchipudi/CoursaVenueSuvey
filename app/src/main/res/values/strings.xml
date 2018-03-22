@@ -11,4 +11,5 @@
     <string name="accept_survey">Accept Survey</string>
     <string name="decline_survey">Decline Survey</string>
     <string name="progress_bar_message">Loading...</string>
+    <string name="no_email">Username is not entered</string>
 </resources>
